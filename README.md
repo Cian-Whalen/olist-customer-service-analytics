@@ -11,14 +11,23 @@ Business Problem
 Reliable delivery is an important component of the e-commerce customer experience. Understanding where and how delivery delays occur can help businesses identify operational problem areas and prioritize improvement opportunities.
 
 This project addresses questions including:
+
 •	How frequently are orders delivered late?
+
 •	Is delivery performance improving or worsening over time?
+
 •	How does delivery performance relate to customer satisfaction?
+
 •	How severe are delivery delays when they occur?
+
 •	Where in the fulfillment process do delays occur?
+
 •	Which seller states and sellers have the highest late delivery rates?
+
 •	Which seller-to-customer routes present the greatest delivery risk?
+
 •	How does carrier transit time differ between on-time and late orders?
+
 •	How does customer satisfaction vary across different levels of delivery delay?
 ________________________________________
 Dataset
@@ -26,15 +35,25 @@ Dataset
 The project uses the publicly available Olist Brazilian E-Commerce Dataset, which contains information about approximately 100,000 orders across multiple interconnected tables.
 
 Key Tables
+
 Dataset	Description
+
 olist_orders_dataset	Order status, purchase dates, delivery dates, and estimated delivery dates
+
 olist_order_items_dataset	Products and sellers associated with each order
+
 olist_order_reviews_dataset	Customer review scores
+
 olist_customers_dataset	Customer identifiers and geographic information
+
 olist_sellers_dataset	Seller identifiers and geographic information
+
 olist_products_dataset	Product and category information
+
 olist_order_payments_dataset	Payment information
+
 olist_geolocation_dataset	Geographic information associated with Brazilian ZIP codes
+
 The analysis accounts for the difference between order-level and item-level data, since individual orders can contain multiple products and order items.
 ________________________________________
 Tools & Technologies
