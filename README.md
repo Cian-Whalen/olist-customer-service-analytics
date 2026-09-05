@@ -1,12 +1,15 @@
 Olist E-Commerce Delivery & Customer Satisfaction Analytics
 
 Project Overview
+
 This project analyzes the Olist Brazilian E-Commerce Dataset to evaluate delivery performance, fulfillment efficiency, seller and geographic risk, and the relationship between delivery delays and customer satisfaction.
 The analysis combines multiple transactional and customer-feedback datasets using Python, SQL, and Google Looker Studio to identify where delivery issues occur, how severe those delays are, and how delivery performance is associated with customer review outcomes.
 The final deliverable is an interactive three-page dashboard designed to help identify operational delivery risks and their impact on the customer experience.
 ________________________________________
 Business Problem
+
 Reliable delivery is an important component of the e-commerce customer experience. Understanding where and how delivery delays occur can help businesses identify operational problem areas and prioritize improvement opportunities.
+
 This project addresses questions including:
 •	How frequently are orders delivered late?
 •	Is delivery performance improving or worsening over time?
@@ -19,7 +22,9 @@ This project addresses questions including:
 •	How does customer satisfaction vary across different levels of delivery delay?
 ________________________________________
 Dataset
+
 The project uses the publicly available Olist Brazilian E-Commerce Dataset, which contains information about approximately 100,000 orders across multiple interconnected tables.
+
 Key Tables
 Dataset	Description
 olist_orders_dataset	Order status, purchase dates, delivery dates, and estimated delivery dates
@@ -72,7 +77,9 @@ Late Delivery Rate	8.11%
 This means approximately 8% of delivered orders were delivered after the expected delivery date.
 ________________________________________
 Key Findings
+
 1. Late delivery is strongly associated with lower customer satisfaction
+
 Customer review scores differed substantially based on delivery performance.
 Delivery Performance	Average Review Score
 On Time	4.29 / 5
@@ -86,12 +93,14 @@ Business Implication
 Delivery reliability represents an important customer-experience metric. Monitoring late delivery alongside review performance can help organizations understand the customer impact of operational delivery issues.
 ________________________________________
 2. Delivery performance generally improved over time
+
 The Average Days Late by Month visualization shows a generally downward trend from 2016 through 2018.
 Although individual months fluctuate, the overall direction indicates that average delivery lateness decreased over the period analyzed.
 Business Implication
 The long-term improvement suggests that delivery performance was generally becoming more efficient over the period, while monthly variation indicates that operational performance was not completely consistent.
 ________________________________________
 3. Late deliveries can vary considerably in severity
+
 The dashboard categorizes late orders into four delay-severity groups:
 •	1–3 days late
 •	4–7 days late
@@ -102,6 +111,7 @@ Business Implication
 A binary late/on-time metric can hide the magnitude of a delivery problem. Separating delays by severity allows businesses to distinguish relatively minor delays from significantly overdue orders.
 ________________________________________
 4. Carrier transit time is substantially longer for late orders
+
 The analysis found a large difference in carrier transit time between late and on-time orders.
 Late Orders
 •	Approval → Carrier: 5.3 days
@@ -116,6 +126,7 @@ Business Implication
 The carrier transit stage represents a key area for operational investigation because the difference between late and on-time orders is substantially larger during this portion of fulfillment than during approval-to-carrier processing.
 ________________________________________
 5. Carrier transit times are widely distributed
+
 The carrier transit-time distribution shows that delivery times are spread across several ranges:
 Carrier Transit Time	Records
 <5 days	29,470
@@ -129,6 +140,7 @@ Business Implication
 The distribution highlights the importance of monitoring unusually long transit times rather than relying solely on average transit time.
 ________________________________________
 6. Seller and geographic performance varies considerably
+
 The dashboard evaluates late delivery rates across seller states and individual sellers to identify areas with elevated delivery risk.
 Rather than focusing solely on overall delivery performance, this analysis allows potential problem areas to be isolated at both the seller and geographic level.
 One particularly high-risk seller-to-customer route was:
@@ -137,63 +149,102 @@ Business Implication
 Route-level analysis can reveal delivery risks that may be hidden when performance is aggregated at the national or state level. High-risk routes can therefore be investigated for potential transportation, geographic, or fulfillment challenges.
 ________________________________________
 7. Review scores remain relatively strong across most states
+
 The geographic review-score analysis shows that the majority of states have average review scores in the 4.XX range.
 This suggests that customer satisfaction is generally strong across geographic markets, despite differences in delivery performance.
 Business Implication
 State-level review analysis provides additional context when evaluating delivery performance. A state with a higher or lower delivery-risk profile does not necessarily have an equally extreme customer-satisfaction outcome, making geographic analysis useful for identifying where operational and customer-experience metrics diverge.
 ________________________________________
 Dashboard
+
 The final dashboard consists of three pages, moving from overall performance to operational root causes and then customer satisfaction.
 ________________________________________
 Page 1 — Executive Overview
+
 The first page provides a high-level view of overall delivery and customer-experience performance.
+
 KPI Cards
 •	Total Orders
 •	Late Delivery Rate
 •	Average Fulfillment Time
 •	Average Review Score
 •	1-Star Review Rate
+
 Visualizations
 Average Days Late by Month — Line chart
+
 Shows how average delivery lateness changes over time, with the overall trend generally declining from 2016 through 2018.
+
 Late Delivery Rate by Customer State — Horizontal bar chart
+
 Compares late delivery rates across customer states.
+
 Delivery Performance vs. Customer Satisfaction — Vertical bar chart
+
 Compares customer review performance based on whether an order was delivered on time or late.
+
 Delivery Delay Severity — Vertical bar chart
+
 Breaks late deliveries into 1–3, 4–7, 8–14, and 15+ day delay categories.
+
 Carrier Transit Time vs. Delivery Performance — Vertical bar chart
+
 Compares carrier transit time based on delivery performance.
+
 Top Sellers by Late Delivery Rate — Horizontal bar chart
+
 Highlights sellers with elevated late delivery rates without relying on seller names in the written analysis.
 ________________________________________
 Page 2 — Root Cause & Operational Analysis
+
 The second page moves deeper into the operational factors associated with delivery performance.
+
 Visualizations
+
 Approval to Carrier Time by Delivery Performance — Vertical bar chart
+
 Compares the time required to move an order from approval to carrier handoff for on-time versus late deliveries.
+
 Top Seller States by Late Delivery Rate — Horizontal bar chart
+
 Identifies seller states with higher late delivery rates.
+
 Highest Risk Sellers by Late Delivery Rate — Horizontal bar chart
+
 Identifies individual sellers with the highest observed late delivery rates.
+
 Highest Risk Seller by Customer Routes — Table
+
 Examines seller-to-customer state routes to identify combinations with elevated delivery risk.
+
 Carrier Transit Time by Delivery Performance — Vertical bar chart
+
 Further compares transit duration between on-time and late orders.
+
 Carrier Transit Time Distribution — Vertical bar chart
+
 Shows the distribution of orders across carrier transit-time ranges.
 ________________________________________
 Page 3 — Customer Satisfaction
+
 The third page focuses specifically on the relationship between delivery performance and customer feedback.
+
 Visualizations
+
 1-Star Rate by Delivery Performance — Vertical bar chart
+
 Compares the percentage of one-star reviews for on-time and late orders.
+
 Review Score by Delay Severity — Vertical bar chart
+
 Shows how customer review scores vary as delivery delays become more severe.
+
 Review Score by State — Filled map
+
 Provides a geographic view of average customer review scores across Brazilian states.
 ________________________________________
 Analytical Approach
+
 The project followed a structured analytics workflow.
 1. Data Exploration & Validation
 Examined the available Olist tables, their schemas, row counts, relationships, and potential unmatched records.
