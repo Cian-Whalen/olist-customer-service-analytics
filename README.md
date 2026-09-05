@@ -1,4 +1,5 @@
 Olist E-Commerce Delivery & Customer Satisfaction Analytics
+
 Project Overview
 This project analyzes the Olist Brazilian E-Commerce Dataset to evaluate delivery performance, fulfillment efficiency, seller and geographic risk, and the relationship between delivery delays and customer satisfaction.
 The analysis combines multiple transactional and customer-feedback datasets using Python, SQL, and Google Looker Studio to identify where delivery issues occur, how severe those delays are, and how delivery performance is associated with customer review outcomes.
